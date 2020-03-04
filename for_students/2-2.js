@@ -9,7 +9,7 @@
 // @ts-check
 /* jshint -W069, esversion:6 */
 
-import * as T from "../libs/THREE/src/Three.js";
+import * as T from "../libs/THREE/build/three.module.js";
 
 //
 // just like 2-1, except with a second box - farther away

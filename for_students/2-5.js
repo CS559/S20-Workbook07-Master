@@ -9,7 +9,7 @@
 // @ts-check
 /* jshint -W069, esversion:6 */
 
-import * as T from "../libs/THREE/src/Three.js";
+import * as T from "../libs/THREE/build/three.module.js";
 
 window.onload = function() {
   // create the window that we want to draw into - this will

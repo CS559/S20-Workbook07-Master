@@ -9,7 +9,7 @@
 // @ts-check
 /* jshint -W069, esversion:6 */
 
-import * as T from "../libs/THREE/src/Three.js";
+import * as T from "../libs/THREE/build/three.module.js";
 
 // the simplest thing I can do
 // draw a box

@@ -9,7 +9,7 @@
 // @ts-check
 /* jshint -W069, esversion:6 */
 
-import * as THREE from "../libs/THREE/src/Three.js";
+import * as T from "../libs/THREE/build/three.module.js";
 import { onWindowOnload } from "../libs/helpers.js";
 
 //
@@ -29,23 +29,23 @@ function three2() {
   ));
 
   // Set up the renderer, which will create the Canvas for us
-  let renderer = new THREE.WebGLRenderer({ canvas: canvas });
+  let renderer = new T.WebGLRenderer({ canvas: canvas });
 
   // the aspect ratio is set to 1 - since we're making the window 200x200
-  let camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+  let camera = new T.PerspectiveCamera(50, 1, 0.1, 1000);
 
-  let scene = new THREE.Scene();
+  let scene = new T.Scene();
 
-  let geometry = new THREE.BoxGeometry(1, 1, 1);
+  let geometry = new T.BoxGeometry(1, 1, 1);
   // this was "MeshBasicMaterial"
-  let material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
-  let cube = new THREE.Mesh(geometry, material);
+  let material = new T.MeshStandardMaterial({ color: 0x00ff00 });
+  let cube = new T.Mesh(geometry, material);
   scene.add(cube);
 
   // we don't see anything if there is no light
-  let ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+  let ambientLight = new T.AmbientLight(0xffffff, 0.5);
   scene.add(ambientLight);
-  let pointLight = new THREE.PointLight(0xffffff, 1);
+  let pointLight = new T.PointLight(0xffffff, 1);
   pointLight.position.set(25, 50, 25);
   scene.add(pointLight);
 

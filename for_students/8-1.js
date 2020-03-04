@@ -9,11 +9,11 @@
 // @ts-check
 /* jshint -W069, esversion:6 */
 
-import * as THREE from "../libs/THREE/src/Three.js";
+import * as T from "../libs/THREE/build/three.module.js";
 import { OrbitControls } from "../libs/THREE/examples/jsm/controls/OrbitControls.js";
 
 window.onload = function() {
-  let renderer = new THREE.WebGLRenderer();
+  let renderer = new T.WebGLRenderer();
   renderer.setSize(500, 500);
   document.getElementById("div1").appendChild(renderer.domElement);
 

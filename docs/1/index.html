@@ -25,16 +25,16 @@
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">import</span> <span style="color:#f92672">*</span> <span style="color:#75af00">as</span> <span style="color:#75af00">THREE</span> <span style="color:#75af00">from</span> <span style="color:#d88200">&#34;../libs/THREE/src/Three.js&#34;</span><span style="color:#111">;</span>
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">import</span> <span style="color:#f92672">*</span> <span style="color:#75af00">as</span> <span style="color:#75af00">THREE</span> <span style="color:#75af00">from</span> <span style="color:#d88200">&#34;../libs/THREE/build/three.module.js&#34;</span><span style="color:#111">;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>This creates a symbol (kindof like a variable) that allows us to access everything built in to THREE. Here, we&rsquo;ve decided to call it <code>THREE</code>. But, we could pick a different variable name. In some of the examples it is called <code>T</code> to save typing. You will see:</p>
+</div><p>This creates a symbol (kindof like a variable) that allows us to access everything built in to THREE. Here, we&rsquo;ve decided to call it <code>THREE</code>. But, we could pick a different variable name. In most of the examples it is called <code>T</code> to save typing. You will see:</p>
 <div class="highlight"><div style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">import</span> <span style="color:#f92672">*</span> <span style="color:#75af00">as</span> <span style="color:#75af00">T</span> <span style="color:#75af00">from</span> <span style="color:#d88200">&#34;../libs/THREE/src/Three.js&#34;</span><span style="color:#111">;</span>
+<pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">import</span> <span style="color:#f92672">*</span> <span style="color:#75af00">as</span> <span style="color:#75af00">T</span> <span style="color:#75af00">from</span> <span style="color:#d88200">&#34;../libs/THREE/build/three.module.js&#34;</span><span style="color:#111">;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Some pieces of THREE (that we&rsquo;ll see later in this workbook, such as the <code>OrbitControl</code>) are not part of the THREE module and, therefore, need to be loaded separately.</p>
@@ -52,7 +52,7 @@
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">let</span> <span style="color:#75af00">renderer</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">THREE</span><span style="color:#111">.</span><span style="color:#75af00">WebGLRenderer</span><span style="color:#111">();</span>
 <span style="color:#75af00">renderer</span><span style="color:#111">.</span><span style="color:#75af00">setSize</span><span style="color:#111">(</span><span style="color:#ae81ff">200</span><span style="color:#111">,</span> <span style="color:#ae81ff">200</span><span style="color:#111">);</span> <span style="color:#75715e">// was (window.innerWidth, window.innerHeight );
-</span><span style="color:#75715e"></span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">getElementById</span><span style="color:#111">(</span><span style="color:#d88200">&#34;three1&#34;</span><span style="color:#111">).</span><span style="color:#75af00">appendChild</span><span style="color:#111">(</span><span style="color:#75af00">renderer</span><span style="color:#111">.</span><span style="color:#75af00">domElement</span><span style="color:#111">);</span>
+</span><span style="color:#75715e"></span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">getElementById</span><span style="color:#111">(</span><span style="color:#d88200">&#34;div1&#34;</span><span style="color:#111">).</span><span style="color:#75af00">appendChild</span><span style="color:#111">(</span><span style="color:#75af00">renderer</span><span style="color:#111">.</span><span style="color:#75af00">domElement</span><span style="color:#111">);</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Which created a <code>WebGLRenderer</code> object, which as part of it has an HTMLCanvasElement (where the drawing will happen). The <code>setSize</code> sets the size of the Canvas (in HTML pixels). The last line finds a container element called <code>three1</code> (it&rsquo;s a <code>DIV</code>) that we put into the HTML where we want to put the newly created canvas, and puts the Canvas into it. You can view the code in <a href="../../for_students/1-2.js" class="for_students">1-2.js</a> (<a href="../../for_students/1-2.html" class="for_students">1-2.html</a>)</p>
@@ -65,12 +65,14 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#00a8c8">let</span> <span style="color:#75af00">canvas</span> <span style="color:#f92672">=</span> <span style="color:#75715e">/** @type {HTMLCanvasElement} */</span> <span style="color:#111">(</span><span style="color:#111">document</span><span style="color:#111">.</span><span style="color:#75af00">getElementById</span><span style="color:#111">(</span>
-  <span style="color:#d88200">&#34;three2&#34;</span>
+  <span style="color:#d88200">&#34;canvas1&#34;</span>
 <span style="color:#111">));</span>
-<span style="color:#00a8c8">let</span> <span style="color:#75af00">renderer</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">THREE</span><span style="color:#111">.</span><span style="color:#75af00">WebGLRenderer</span><span style="color:#111">({</span> <span style="color:#75af00">canvas</span><span style="color:#f92672">:</span> <span style="color:#75af00">canvas</span> <span style="color:#111">});</span>
+
+<span style="color:#00a8c8">let</span> <span style="color:#75af00">renderer</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">new</span> <span style="color:#75af00">T</span><span style="color:#111">.</span><span style="color:#75af00">WebGLRenderer</span><span style="color:#111">({</span> <span style="color:#75af00">canvas</span><span style="color:#f92672">:</span> <span style="color:#75af00">canvas</span> <span style="color:#111">});</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Basically, we have to find the Canvas and pass it to the constructor of the renderer.</p>
